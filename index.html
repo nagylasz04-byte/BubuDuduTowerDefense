@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubu &amp; Dudu vs Kaja Szörnyek</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- START SCREEN -->
+  <section id="screen-start" class="screen active">
+    <div class="title-wrap">
+      <div class="mascots">
+        <div class="mascot bubu-face">🐻</div>
+        <div class="mascot dudu-face">🐼</div>
+      </div>
+      <h1>Bubu &amp; Dudu<br><span>vs Kaja Szörnyek</span></h1>
+      <p class="subtitle">Védd meg az otthonod a rosszcsont hamburgerektől, tacóktól és fánkoktól!</p>
+    </div>
+    <div class="menu-buttons">
+      <button id="btn-play" class="btn btn-primary">▶ Játék indítása</button>
+      <button id="btn-howto" class="btn btn-secondary">❓ Hogyan kell játszani</button>
+    </div>
+    <p class="footer-note">Készítette: Bubu &amp; Dudu stúdió 🍯</p>
+  </section>
+
+  <!-- HOW TO PLAY -->
+  <section id="screen-howto" class="screen">
+    <div class="panel">
+      <h2>Hogyan kell játszani?</h2>
+      <ul class="howto-list">
+        <li>🍏 Gyűjts <b>Energiát</b> — kattints a pályára hulló csillagokra, vagy telepíts Napfény-termelő Bubukat.</li>
+        <li>🐻🐼 Válassz védőt lent a boltban, majd kattints egy mezőre a pályán a telepítéshez.</li>
+        <li>🍔🌮🍩 A kaja szörnyek balra masíroznak — állítsd meg őket, mielőtt elérik a házad!</li>
+        <li>🧹 Minden sorban van egy vészseprű, ami egyszer megment — utána vigyázz!</li>
+        <li>⭐ Éld túl az összes hullámot, hogy megnyerd a pályát!</li>
+      </ul>
+      <button id="btn-howto-back" class="btn btn-primary">Vissza</button>
+    </div>
+  </section>
+
+  <!-- LEVEL SELECT -->
+  <section id="screen-levels" class="screen">
+    <h2>Válassz pályát</h2>
+    <div id="level-grid" class="level-grid"></div>
+    <button id="btn-levels-back" class="btn btn-secondary">← Vissza a főmenübe</button>
+  </section>
+
+  <!-- GAME SCREEN -->
+  <section id="screen-game" class="screen">
+    <div id="hud">
+      <div id="hud-energy">🍏 <span id="energy-count">0</span></div>
+      <div id="hud-level">Pálya <span id="level-num">1</span></div>
+      <div id="hud-progress-wrap"><div id="hud-progress-bar"></div></div>
+      <button id="btn-pause" class="btn btn-icon">⏸</button>
+    </div>
+    <div id="shop-bar"></div>
+    <div id="canvas-wrap">
+      <canvas id="game-canvas" width="900" height="560"></canvas>
+      <div id="banner-layer"></div>
+    </div>
+  </section>
+
+  <!-- OVERLAYS -->
+  <div id="overlay-pause" class="overlay">
+    <div class="panel">
+      <h2>Szünet</h2>
+      <button id="btn-resume" class="btn btn-primary">▶ Folytatás</button>
+      <button id="btn-restart" class="btn btn-secondary">🔄 Újraindítás</button>
+      <button id="btn-quit" class="btn btn-secondary">🏠 Főmenü</button>
+    </div>
+  </div>
+
+  <div id="overlay-win" class="overlay">
+    <div class="panel">
+      <h2>🎉 Pálya teljesítve! 🎉</h2>
+      <p id="win-text">Bubu és Dudu megvédték az otthont!</p>
+      <button id="btn-win-next" class="btn btn-primary">Következő pálya ▶</button>
+      <button id="btn-win-menu" class="btn btn-secondary">🏠 Pályaválasztó</button>
+    </div>
+  </div>
+
+  <div id="overlay-lose" class="overlay">
+    <div class="panel">
+      <h2>😢 A szörnyek betörtek...</h2>
+      <p>Próbáld újra, Bubu és Dudu hisz benned!</p>
+      <button id="btn-lose-retry" class="btn btn-primary">🔄 Újra</button>
+      <button id="btn-lose-menu" class="btn btn-secondary">🏠 Pályaválasztó</button>
+    </div>
+  </div>
+
+</div>
+<script src="game.js" defer></script>
+</body>
+</html>
